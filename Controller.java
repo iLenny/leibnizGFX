@@ -1,9 +1,11 @@
 package leibnizGFX;
-
+/**
+ * 
+ * @author Leibniz H. Berihuete
+ * The purpose of this class is to 
+ */
 public class Controller {
-	private static Controller controller;
-	
-	
+	private static Controller controller;	
 	private Controller(){}
 	
 	public static Controller getInstance() {
