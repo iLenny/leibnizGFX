@@ -98,7 +98,7 @@ public class CollisionObject extends Pane implements Updatable{
 		downBar.setTranslateY(rightBar.getHeight()-thickness);
 		
 	}
-	public void hideBars(boolean hide) {
+	public void visibleBars(boolean hide) {
 		leftBar.setVisible(hide);
 		rightBar.setVisible(hide);
 		upBar.setVisible(hide);
@@ -127,7 +127,7 @@ public class CollisionObject extends Pane implements Updatable{
 	
 	private void pushX(Node node, Rectangle bar, double magnitude) {
 		Bounds nodeBounds = node.localToScene(node.getBoundsInLocal());
-		Bounds barBounds = bar.sceneToLocal(bar.getBoundsInLocal());
+		Bounds barBounds = bar.localToScene(bar.getBoundsInLocal());
 		if(nodeBounds.intersects(barBounds)) {
 			node.setTranslateX(node.getTranslateX() + magnitude);
 		}
@@ -135,7 +135,7 @@ public class CollisionObject extends Pane implements Updatable{
 	
 	private void pushY(Node node, Rectangle bar, double magnitude) {
 		Bounds nodeBounds = node.localToScene(node.getBoundsInLocal());
-		Bounds barBounds = bar.sceneToLocal(bar.getBoundsInLocal());
+		Bounds barBounds = bar.localToScene(bar.getBoundsInLocal());
 		if(nodeBounds.intersects(barBounds)) {
 			node.setTranslateY(node.getTranslateY() + magnitude);
 		}
@@ -145,8 +145,7 @@ public class CollisionObject extends Pane implements Updatable{
 	public void update() {
 		if(leftNode != null) {
 			pushX(leftNode, leftBar, -leftPushMagnitude);
-		}
-		
+		} 
 		if(rightNode != null) {
 			pushX(rightNode, rightBar, rightPushMagnitude);
 		}
