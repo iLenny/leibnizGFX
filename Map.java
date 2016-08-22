@@ -38,6 +38,7 @@ public class Map extends Pane implements Updatable {
 		collisionObjList = new ArrayList<CollisionObject>();
 		gravity = 9.8;
 		this.player = (Character)player;
+		this.player.setCurrentGravityExerted(gravity);
 		super.getChildren().addAll(backgroundView, mapView, this.player);
 	}
 	
@@ -55,6 +56,7 @@ public class Map extends Pane implements Updatable {
 		collisionObjList = new ArrayList<CollisionObject>();
 		gravity = 9.8;
 		this.player = (Character)player;
+		this.player.setCurrentGravityExerted(gravity);
 		super.getChildren().addAll(backgroundView, mapView, this.player);
 	}
 	
@@ -74,6 +76,7 @@ public class Map extends Pane implements Updatable {
 		gravity = 9.8;
 		this.player = (Character)player;
 		this.mapBehavior = mapBehavior;
+		this.player.setCurrentGravityExerted(gravity);
 		super.getChildren().addAll(backgroundView, mapView, this.player);
 	}
 	

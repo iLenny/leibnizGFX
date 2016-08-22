@@ -15,6 +15,7 @@ public class Character extends Pane implements Updatable{
 	private double attackPower;	
 	private ImageView characterView;
 	private Behavior characterBehavior;
+	private double currentGravityExerted = 0;
 	
 	
 	
@@ -120,6 +121,10 @@ public class Character extends Pane implements Updatable{
 		return this;
 	}
 	
+	public void setCurrentGravityExerted(double currentGravityExerted) {
+		this.currentGravityExerted = currentGravityExerted;
+	}
+	
 	/* *************************************
 	 *              ACCESSORS
 	 * *************************************/
@@ -142,6 +147,10 @@ public class Character extends Pane implements Updatable{
 	public ImageView getCharacterView() {
 		return characterView;
 	}
+	
+	public double getCurrentGravityExerted() {
+		return this.currentGravityExerted;
+	}
 
 	@Override
 	public void update() {
@@ -150,5 +159,7 @@ public class Character extends Pane implements Updatable{
 		}
 		
 	}
+	
+
 	
 }

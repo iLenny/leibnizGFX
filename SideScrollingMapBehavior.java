@@ -91,6 +91,9 @@ public class SideScrollingMapBehavior implements Behavior {
 	
 	@Override
 	public void performBehavior() {
+		
+		player.setTranslateY(player.getTranslateY() + player.getCurrentGravityExerted());
+		
 		// MapView Bounds:
 		Bounds mapBounds = mapView.localToScene(mapView.getBoundsInLocal());
 		double mapX = mapBounds.getMinX();
